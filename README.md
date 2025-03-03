@@ -904,3 +904,42 @@ class Main {
     }
 }
 ```
+## 34.How do you reverse an array Inplace ?
+```
+class Main {
+    
+    private static void swapArrayValues(int[] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    
+    private static void reverseArrayInplace(int[] arr){
+        int i = 0;
+        int j = arr.length-1;
+        
+        while(i < j){
+            swapArrayValues(arr, i, j);
+            i++;
+            j--;
+        }
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println("Array before reversal : ");
+        for(int i : arr){
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        
+        reverseArrayInplace(arr);
+        
+        System.out.println("Array after reversal : ");
+        for(int i : arr){
+            System.out.print(i+" ");
+        }
+        
+    }
+}
+```
